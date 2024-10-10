@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+//This is header pages which contain three components(Home,Detail and Application);
 const Header = () => {
   return (
       

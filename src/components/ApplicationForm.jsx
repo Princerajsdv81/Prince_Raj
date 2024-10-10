@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
+//This is the application form for job application
 const ApplicationForm = () => {
     let navigate =useNavigate();
     let [user,setUser]=useState({
@@ -38,6 +39,7 @@ let handleSubmit=(e)=>{
             <input className='border-2 w-full'  type='file' name='resume'  required value={user.resume} onChange={handleChange}/>
             </div>
             <hr/>
+            {/* I made cover letter non-mandatory field. */}
             <div className='p-2 m-2'>
             <label htmlFor='cover_letter'>Add Cover Letter </label>
             <input className='border-2 w-full'  type='file' name='cover_letter'  value={user.cover_letter} onChange={handleChange}/>

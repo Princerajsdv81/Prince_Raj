@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
-import ApplicationForm from './ApplicationForm';
+import { useNavigate } from 'react-router-dom';
 
-
-
+/* This is Job Detail section of web page where all available 
+  job will be displayed along with location,title and discription .
+  NOte:-Here all the logic(business logic ) of job application portal is written*/
 const allJobData=[
   {
     "id":1,
@@ -44,9 +44,7 @@ const JobDetail = () => {
   const filterJobs=allJobData.filter((job)=>{
    const mathchedLocation=filterLocation?job.location===filterLocation:true;
    const matchedTitle=filterTitle?job.title===filterTitle:true;
-      return mathchedLocation && matchedTitle;
-    
-    
+      return mathchedLocation && matchedTitle; 
   });
   //this handle change is for filteration by title .
   let handleChangeTitle=(e)=>{
@@ -60,8 +58,6 @@ const JobDetail = () => {
     // setFilterLocation({...filterLocation,[name]:value});
     setFilterLocation(e.target.value);
   }
-
-  
   return (
     <section>
       <div className=' h-[5vh] border-2 md:flex-row flex-col'>

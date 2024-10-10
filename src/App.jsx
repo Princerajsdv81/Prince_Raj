@@ -9,6 +9,7 @@ import { Toaster } from 'react-hot-toast'
 
 const App = () => {
   return (
+    //routing of different webpages are provider here using browser router
    <BrowserRouter>
      <Header/>
      <Toaster/>
