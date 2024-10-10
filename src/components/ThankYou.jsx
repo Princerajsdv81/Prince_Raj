@@ -13,7 +13,7 @@ const ThankYou = () => {
       </p>
     <div>
       {/* After successfull submission go back to home page. */}
-      <Link to='/'>Home</Link>
+      <Link to='/' className="bg-slate-400 items-center ml-[39vw]">Back To Home </Link>
     </div>
     </div>
   );

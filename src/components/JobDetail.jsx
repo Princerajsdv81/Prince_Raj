@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import ApplicationForm from './ApplicationForm';
 
 
 
@@ -34,9 +35,12 @@ const allJobData=[
 },
 ]
 const JobDetail = () => {
+
+  
   let [filterLocation,setFilterLocation]=useState("");
   let [filterTitle,setFilterTitle]=useState("");
-
+  // this hook  is for navigation from one page to another.
+  let navigate=useNavigate()
   const filterJobs=allJobData.filter((job)=>{
    const mathchedLocation=filterLocation?job.location===filterLocation:true;
    const matchedTitle=filterTitle?job.title===filterTitle:true;
@@ -99,7 +103,7 @@ const JobDetail = () => {
                   <p>{job.description}
                   </p>
                   {/* Added apply button on cards of job details */}
-                  <button className='relative bg-blue-500 w-[6rem] h-[2rem] rounded-2xl  mt-6 mb-2'>Apply Now
+                  <button onClick={()=>navigate("/applicationForm")} className='relative bg-blue-500 w-[6rem] h-[2rem] rounded-2xl  mt-6 mb-2'>Apply Now
                   </button> 
                 </div>
        </div>
