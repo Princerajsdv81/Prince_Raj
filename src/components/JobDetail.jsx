@@ -64,7 +64,7 @@ const JobDetail = () => {
   
   return (
     <section>
-      <div className='w-[100vw] h-[5vh] border-2 '>
+      <div className=' h-[5vh] border-2 md:flex-row flex-col'>
       <label htmlFor="title">Filter by job name:</label>
      <select className='w-[10vw] ml-8'  name='title' value={filterTitle} onChange={handleChangeTitle}>
       {/* this is by default  selection*/}
