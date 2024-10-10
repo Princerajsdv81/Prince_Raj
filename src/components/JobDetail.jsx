@@ -98,6 +98,9 @@ const JobDetail = () => {
                 <div className="text-center md:text-left px-2">
                   <p>{job.description}
                   </p>
+                  {/* Added apply button on cards of job details */}
+                  <button className='relative bg-blue-500 w-[6rem] h-[2rem] rounded-2xl  mt-6 mb-2'>Apply Now
+                  </button> 
                 </div>
        </div>
           ))}
