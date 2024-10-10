@@ -12,6 +12,7 @@ const ThankYou = () => {
         round.
       </p>
     <div>
+      {/* After successfull submission go back to home page. */}
       <Link to='/'>Home</Link>
     </div>
     </div>

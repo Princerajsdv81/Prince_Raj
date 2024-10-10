@@ -5,11 +5,13 @@ import Home from './components/Home'
 import JobDetail from './components/JobDetail'
 import ApplicationForm from './components/ApplicationForm'
 import ThankYou from './components/ThankYou'
+import { Toaster } from 'react-hot-toast'
 
 const App = () => {
   return (
    <BrowserRouter>
      <Header/>
+     <Toaster/>
     <Routes>
     <Route path='/' element={<Home/>}/>
     <Route path='/jobDetail' element={<JobDetail/>}/>
