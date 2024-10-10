@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 
 
@@ -33,25 +34,27 @@ const allJobData=[
 },
 ]
 const JobDetail = () => {
-  let [filterLocation,setFilterLocation]=useState(" ");
+  let [filterLocation,setFilterLocation]=useState("");
   let [filterTitle,setFilterTitle]=useState("");
 
-  const filterJob=allJobData.filter((job)=>{
-   const mathchedData=filterLocation?job.location===filterLocation:true;
-   const matchedTitle=filterTitle?job.title===filterLocation:true;
-      return mathchedData && matchedTitle;
+  const filterJobs=allJobData.filter((job)=>{
+   const mathchedLocation=filterLocation?job.location===filterLocation:true;
+   const matchedTitle=filterTitle?job.title===filterTitle:true;
+      return mathchedLocation && matchedTitle;
     
     
   });
   //this handle change is for filteration by title .
   let handleChangeTitle=(e)=>{
-    let {name,value}=e.target;
-    setFilterTitle({...filterTitle,[name]:value});
-  }
+    // let {name,value}=e.target;
+    // setFilterTitle({...filterTitle,[name]:value});
+    setFilterTitle(e.target.value)
+  };
   //this handle change is for filteration of job by location.
   let handleChangeLocation=(e)=>{
-    let {name,value}=e.target;
-    setFilterLocation({...filterLocation,[name]:value});
+    // let {name,value}=e.target;
+    // setFilterLocation({...filterLocation,[name]:value});
+    setFilterLocation(e.target.value);
   }
 
   
@@ -82,7 +85,7 @@ const JobDetail = () => {
        <div className='flex flex-wrap  justify-start  items-stretch border border-black h-auto w-full px-[1rem] md:px-[6rem]  py-[2rem] space-x-0 md:space-x-2' >
           
           {/*  we can use the map function to iterate over the  array and generate the cards dynamically  */}
-          {filterJob.map((job)=>(
+          {filterJobs.map((job)=>(
                    
                    
    // Item Width: Each item is given a width of 30% to fit three items per row.
@@ -95,8 +98,6 @@ const JobDetail = () => {
                 <div className="text-center md:text-left px-2">
                   <p>{job.description}
                   </p>
-                  <button className='relative bg-blue-500 w-[6rem] h-[2rem] rounded-2xl  mt-6 mb-2'>Apply Now
-                  </button> 
                 </div>
        </div>
           ))}
